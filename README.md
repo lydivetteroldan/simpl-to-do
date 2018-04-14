@@ -30,5 +30,5 @@ You can view the wireframes for this project [here](http://agilelifestyle.net/th
 - Add extra features
 
 ## Links
-- Simpl To-Do API repository: https://github.com/lydivetteroldan/simpl-to-do
+- Simpl To-Do API repository: https://github.com/lydivetteroldan/simpl-to-do-api
 - Simpl To-Do API on Heroku: https://simpl-to-do.herokuapp.com
