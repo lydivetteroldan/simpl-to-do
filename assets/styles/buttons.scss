@@ -1,0 +1,22 @@
+.btn-link {
+  border-bottom: 2px solid $gray;
+  color: $black;
+  outline: none;
+  padding-bottom: 1px;
+
+  &,
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    border-bottom: 2px solid $black;
+    color: $black;
+  }
+
+  &.btn-inline {
+    padding: 0;
+  }
+}

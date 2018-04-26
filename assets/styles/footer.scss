@@ -1,0 +1,21 @@
+.footer {
+  bottom: 0;
+  height: 60px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+
+@media (min-width: $screen-sm-max) {
+  .footer {
+    &-container {
+      padding-left: $main-padding;
+      padding-right: $main-padding;
+    }
+
+    &-text {
+      margin: 0;
+      padding: $medium-padding;
+    }
+  }
+}

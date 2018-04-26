@@ -1,0 +1,36 @@
+$main-padding: 30px;
+$medium-padding: 15px;
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+a {
+  &,
+  &:active,
+  &:hover {
+    color: $black;
+  }
+}
+
+.btn-default,
+.dropdown-menu,
+.form-control,
+.list-group-item, {
+  -webkit-box-shadow: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.password-notifications {
+  margin-top: $medium-padding;
+}
+
+textarea {
+  resize: none;
+}

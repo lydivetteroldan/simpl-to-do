@@ -1,0 +1,14 @@
+@media (max-width: $screen-xs-max) {
+  .post {
+    &-date-input,
+    &-title-input {
+      margin-bottom: $medium-padding;
+    }
+  }
+}
+
+.posts-list {
+  li {
+    border-bottom: 1px solid $gray;
+  }
+}
