@@ -1,17 +1,90 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>simpl to-do – manage your to-do list</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
-      <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,900" rel="stylesheet">
 
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <div id="page">
+        <nav class="navbar navbar-static-top page-navbar">
+          <div class="container-fluid navbar-container">
+            <div class="navbar-header">
+              <button type="button" class="hidden navbar-toggle collapsed" data-toggle="collapse" data-target="#page-navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="text-lowercase btn btn-custom btn-main bbt" href="#">Simpl To-Do</a>
+            </div>
+            <div class="collapse navbar-collapse" id="page-navbar-collapse">
+              <ul class="visible-xs-block list-unstyled">
+                <li>
+                  <button type="submit" data-toggle="modal" role="button" data-target="#passwordModal" class="text-lowercase btn btn-custom bbt" id="password">Password</button>
+                </li>
+                <li>
+                  <button type="submit" role="button" class="text-lowercase btn btn-custom bbt" id="signOut">Sign Out</button>
+                </li>
+              </ul>
+              <ul class="hidden-xs hidden list-unstyled navbar-right">
+                <li class="dropdown">
+                  <a href="#" class="text-lowercase text-mono dropdown-toggle btn btn-custom bordered" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="signedIn">Signed In</a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <button type="submit" data-toggle="modal" role="button" data-target="#passwordModal" class="text-lowercase text-mono btn btn-custom bbt" id="password">Password</button>
+                    </li>
+                    <li>
+                      <button type="submit" role="button" class="text-lowercase text-mono btn btn-custom bbt" id="signOut">Sign Out</button>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+        <section class="signed-out">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="intro page-content">
+                  <h2 class="text-strong text-sans">Create and update your to-do list.</h2>
+                  <p class="text-sans">Sign up or sign in to continue.</p>
+                </div>
+                <div class="page-forms">
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="signed-in">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-6">
+                <div class="page-content"></div>
+              </div>
+              <div class="col-xs-6">
+                <div class="page-forms"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="footer">
+          <div class="container-fluid footer-container text-right">
+            <div class="row">
+              <div class="col-xs-12">
+                <p class="footer-text">Created by <a class="text-mono btn btn-custom bbt" href="https://github.com/lydivetteroldan" target="_blank">Lydivette Roldán</a></p>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
     </body>
 </html>

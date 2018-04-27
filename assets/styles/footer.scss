@@ -9,13 +9,13 @@
 @media (min-width: $screen-sm-max) {
   .footer {
     &-container {
-      padding-left: $main-padding;
-      padding-right: $main-padding;
+      padding-left: $medium-padding;
+      padding-right: $medium-padding;
     }
 
     &-text {
       margin: 0;
-      padding: $medium-padding;
+      padding: $medium-padding 0;
     }
   }
 }
