@@ -14,7 +14,7 @@ You can read the user stories for this project here:
 
 #### Wireframes
 
-You can view the wireframes for this project [here](http://agilelifestyle.net/the-rule-of-3).
+You can view the wireframes for this project [here](https://imgur.com/b7TJV0F).
 
 ### Technologies Used
 - HTML
