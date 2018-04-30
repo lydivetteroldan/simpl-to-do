@@ -33,7 +33,7 @@
                   <button type="submit" role="button" class="text-lowercase btn btn-custom bbt" id="signOut">Sign Out</button>
                 </li>
               </ul>
-              <ul class="hidden-xs hidden list-unstyled navbar-right">
+              <ul class="hidden-xs hidden list-unstyled navbar-right signed-in">
                 <li class="dropdown">
                   <a href="#" class="text-lowercase text-mono dropdown-toggle btn btn-custom bbt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="signedIn">Signed In</a>
                   <ul class="dropdown-menu flat">
@@ -49,7 +49,7 @@
             </div>
           </div>
         </nav>
-        <section class="signed-out">
+        <section class="welcome">
           <div class="container-fluid">
             <div class="row">
               <div class="col-md-8 col-md-offset-2">
@@ -63,7 +63,8 @@
                         </div>
                         <div class="page-forms">
                           <!-- Sign Up -->
-                          <section class="hidden sign-up">
+                          <section class="sign-up">
+                            <p class="message"></p>
                             <form class="form" id="signUp">
                               <div class="form-group">
                                 <label for="inputEmail1" class="text-uppercase text-mono control-label">Email</label>
@@ -85,14 +86,15 @@
                           </section>
                           <!-- Sign In -->
                           <section class="sign-in">
+                            <p class="message"></p>
                             <form class="form" id="signIn">
                               <div class="form-group">
                                 <label for="inputEmail2" class="text-uppercase text-mono control-label">Email</label>
                                 <input type="email" class="form-control" id="inputEmail2" name="credentials[email]" placeholder="Enter your email address" required>
                               </div>
                               <div class="form-group">
-                                <label for="inputPassword1" class="text-uppercase text-mono control-label">Password</label>
-                                <input type="password" class="form-control" id="inputPassword1" name="credentials[password]" placeholder="Enter your password" required>
+                                <label for="inputPassword3" class="text-uppercase text-mono control-label">Password</label>
+                                <input type="password" class="form-control" id="inputPassword3" name="credentials[password]" placeholder="Enter your password" required>
                               </div>
                               <div class="form-group">
                                 <button type="submit" class="text-lowercase text-mono text-strong btn btn-default">Sign In</button>
@@ -109,7 +111,7 @@
             </div>
           </div>
         </section>
-        <section class="signed-in">
+        <section class="home">
           <div class="container-fluid">
             <div class="row">
               <div class="col-xs-6">
