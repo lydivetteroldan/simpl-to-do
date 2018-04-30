@@ -4,21 +4,13 @@ body {
   font-size: 16px;
 }
 
-.btn-custom {
-  font-size: 100%;
+.btn-main {
+  font-size: 1.5em;
+  font-weight: 700;
 }
 
 .footer-text {
   font-size: small;
-}
-
-.intro {
-  font-size: 1.5em;
-
-  h2,
-  .h2 {
-    font-size: 2.25em;
-  }
 }
 
 .text-danger,
@@ -35,7 +27,7 @@ body {
 .text-mono {
   font-family: 'Roboto Mono', monospace;
 
-  .text-strong {
+  &.text-strong {
     font-weight: 700;
   }
 }

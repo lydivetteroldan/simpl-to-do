@@ -2,7 +2,6 @@
   background-color: transparent;
   border-radius: 0;
   outline: none;
-  padding: 6px;
 
   &,
   &:focus,
@@ -22,19 +21,32 @@
       border-bottom: 1px solid $dark-gray;
     }
   }
+}
 
-  &.bordered {
-    border: 1px solid;
+.btn-default {
+  @extend .flat;
 
-    &:focus,
-    &:hover {
-      border-color: $dark-gray;
-    }
+  border: 1px solid $black;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: transparent;
+    border: 1px solid $dark-gray;
+    color: $dark-gray;
   }
+}
+
+.btn-main {
+  padding: 0;
 }
 
 @media (max-width: $screen-sm-max) {
   .btn-main {
     margin: 12px 15px 0;
   }
+}
+
+.dropdown-menu {
+  margin-top: 5px;
 }

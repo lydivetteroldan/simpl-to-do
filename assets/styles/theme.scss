@@ -19,13 +19,34 @@ a {
   }
 }
 
-.btn-default,
-.dropdown-menu,
-.form-control,
-.list-group-item, {
+.box {
+  background-color: $white;
+  border: 1px solid $gray;
+  padding: 2.5em 6em;
+}
+
+@media (max-width: $screen-md-max) {
+  .box {
+    padding: 2.5em 3em;
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  .box {
+    padding: 2em;
+  }
+}
+
+.flat {
   -webkit-box-shadow: none;
   border-radius: 0;
   box-shadow: none;
+}
+
+.form {
+  &-control {
+    @extend .flat;
+  }
 }
 
 .password-notifications {
