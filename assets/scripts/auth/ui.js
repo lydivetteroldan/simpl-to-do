@@ -1,6 +1,8 @@
 'use strict'
 
 const store = require('../store')
+const signInTemplate = require('../templates/sign-in.handlebars')
+const signUpTemplate = require('../templates/sign-up.handlebars')
 
 const authError = () => {
   clear()
@@ -32,14 +34,20 @@ const showAlert = () => {
 }
 
 const showSignIn = () => {
+  const signInHtml = signInTemplate()
   clear()
   $('.sign-up').hide()
+  $('.sign-in .form-template').html(' ')
+  $('.sign-in .form-template').prepend(signInHtml)
   $('.sign-in').show('slow')
 }
 
 const showSignUp = () => {
+  const signUpHtml = signUpTemplate()
   clear()
   $('.sign-in').hide()
+  $('.sign-up .form-template').html(' ')
+  $('.sign-up .form-template').prepend(signUpHtml)
   $('.sign-up').show('slow')
 }
 
