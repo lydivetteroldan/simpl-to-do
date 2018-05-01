@@ -10,6 +10,7 @@ const authError = () => {
 
 const clear = () => {
   $('form').trigger('reset')
+  $('.message').hide()
   $('.message').removeClass('error')
   $('.message').html(' ')
 }
@@ -18,6 +19,12 @@ const error = () => {
   const message = 'There was an error. Please try again.'
   $('.message').addClass('error')
   $('.message.error').append(message)
+}
+
+const onClose = () => {
+  $('.modal').on('hidden.bs.modal', function (e) {
+    clear()
+  })
 }
 
 const showAlert = () => {
@@ -50,6 +57,24 @@ const signInSuccess = (data) => {
   $('.signed-in').removeClass('hidden')
 }
 
+const changePasswordSuccess = (data) => {
+  const message = 'Your new password has been saved.'
+  $('form').trigger('reset')
+  $('.message.password-message').show()
+  $('.message.password-message').removeClass('error')
+  $('.message.password-message').html(' ')
+  $('.message.password-message').append(message)
+}
+
+const changePasswordError = () => {
+  const message = 'There was an error. Please try again.'
+  $('form').trigger('reset')
+  $('.message.password-message').show()
+  $('.message.password-message').addClass('error')
+  $('.message.password-message').html(' ')
+  $('.message.password-message').append(message)
+}
+
 const signOutSuccess = () => {
   $('.home').hide()
   $('.welcome').show()
@@ -63,6 +88,9 @@ const unauthorized = () => {
 
 module.exports = {
   authError,
+  changePasswordError,
+  changePasswordSuccess,
+  onClose,
   showSignUp,
   showSignIn,
   signUpSuccess,

@@ -20,7 +20,15 @@ const onSignIn = (event) => {
     .catch(ui.authError)
 }
 
-const onSignOut = function (event) {
+const onChangePassword = (event) => {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.changePassword(data)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordError)
+}
+
+const onSignOut = (event) => {
   event.preventDefault()
   api.signOut()
     .then(ui.signOutSuccess)
@@ -28,8 +36,10 @@ const onSignOut = function (event) {
 }
 
 const eventHandlers = () => {
+  ui.onClose()
   $('#signUp').on('submit', onSignUp)
   $('#signIn').on('submit', onSignIn)
+  $('#password').on('submit', onChangePassword)
   $('#signInButton').on('click', ui.showSignIn)
   $('#signUpButton').on('click', ui.showSignUp)
   $('#signOut').on('click', onSignOut)

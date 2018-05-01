@@ -37,8 +37,15 @@ a {
   }
 }
 
-.error {
-  color: $red;
+.message {
+  border: 1px dashed;
+  color: $dark-gray;
+  margin: $medium-padding 0;
+  padding: 8px;
+
+  &.error {
+    color: $red;
+  }
 }
 
 .flat {
@@ -47,10 +54,13 @@ a {
   box-shadow: none;
 }
 
-.form {
-  &-control {
-    @extend .flat;
-  }
+.form-control,
+.modal-content {
+  @extend .flat;
+}
+
+.modal {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .password-notifications {

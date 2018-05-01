@@ -9,19 +9,17 @@ body {
   font-weight: 700;
 }
 
+.control-label,
 .footer-text {
   font-size: small;
 }
 
-.text-danger,
-.text-success {
-  border: 1px dashed;
-  padding: $medium-padding;
+.message,
+.error {
+  @extend .text-mono;
 
-  &.password-message {
-    font-size: small;
-    padding: 8px;
-  }
+  font-size: small;
+  text-align: center;
 }
 
 .text-mono {

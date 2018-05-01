@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="page-navbar-collapse">
               <ul class="hidden navbar-right list-inline signed-in">
                 <li>
-                  <button type="submit" data-toggle="modal" role="button" data-target="#passwordModal" class="text-lowercase text-mono btn btn-default btn-custom" id="password">Password</button>
+                  <button type="submit" data-toggle="modal" role="button" data-target="#passwordModal" class="text-lowercase text-mono btn btn-default btn-custom" id="passwordModalButton">Password</button>
                 </li>
                 <li>
                   <button type="submit" role="button" class="text-lowercase text-mono btn btn-default btn-custom" id="signOut">Sign Out</button>
@@ -36,6 +36,36 @@
             </div>
           </div>
         </nav>
+        <section class="modals">
+          <!-- Modal: Change Password -->
+          <div class="modal fade password" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" id="passwordModal">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="text-lowercase text-sans text-strong modal-title" id="passwordModalLabel">Change Password</h4>
+                </div>
+                <div class="modal-body">
+                  <form id="password">
+                    <div class="form-group">
+                      <label for="inputPassword4" class="control-label text-uppercase text-mono text-strong">Current Password</label>
+                      <input type="password" id="inputPassword4" class="form-control" name="passwords[old]" placeholder="Enter your current password" required>
+                    </div>
+                    <div class="form-group">
+                      <label for="inputPassword5" class="control-label text-uppercase text-mono text-strong">New Password</label>
+                      <input type="password" id="inputPassword5" class="form-control" name="passwords[new]" placeholder="Enter your new password" required>
+                    </div>
+                    <div class="form-group">
+                      <button type="submit" class="text-lowercase btn btn-default btn-custom" id="passwordButton">Save</button>
+                      <br>
+                      <p class="message password-message"></p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
         <section class="welcome">
           <div class="container-fluid">
             <div class="row">
