@@ -9,7 +9,7 @@ const onSignUp = (event) => {
   const data = getFormFields(event.target)
   api.signUp(data)
     .then(ui.signUpSuccess)
-    .catch(ui.signUpFailure)
+    .catch(ui.authError)
 }
 
 const onSignIn = (event) => {
@@ -17,7 +17,14 @@ const onSignIn = (event) => {
   const data = getFormFields(event.target)
   api.signIn(data)
     .then(ui.signInSuccess)
-    .catch(ui.signInFailure)
+    .catch(ui.authError)
+}
+
+const onSignOut = function (event) {
+  event.preventDefault()
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.authError)
 }
 
 const eventHandlers = () => {
@@ -25,6 +32,7 @@ const eventHandlers = () => {
   $('#signIn').on('submit', onSignIn)
   $('#signInButton').on('click', ui.showSignIn)
   $('#signUpButton').on('click', ui.showSignUp)
+  $('#signOut').on('click', onSignOut)
 }
 
 module.exports = {

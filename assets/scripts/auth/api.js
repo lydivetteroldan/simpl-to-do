@@ -24,7 +24,20 @@ const signIn = function (data) {
     data
   })
 }
+
+const signOut = function () {
+  return $.ajax({
+    url: config.apiUrl + '/sign-out/' + store.user.id,
+    method: 'DELETE',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
   signUp,
-  signIn
+  signIn,
+  signOut
 }

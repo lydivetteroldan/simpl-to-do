@@ -25,25 +25,12 @@
               <a class="text-lowercase btn btn-custom btn-main" href="#">Simpl To-Do</a>
             </div>
             <div class="collapse navbar-collapse" id="page-navbar-collapse">
-              <ul class="visible-xs-block list-unstyled">
+              <ul class="hidden navbar-right list-inline signed-in">
                 <li>
-                  <button type="submit" data-toggle="modal" role="button" data-target="#passwordModal" class="text-lowercase btn btn-custom bbt" id="password">Password</button>
+                  <button type="submit" data-toggle="modal" role="button" data-target="#passwordModal" class="text-lowercase text-mono btn btn-custom bbt" id="password">Password</button>
                 </li>
                 <li>
-                  <button type="submit" role="button" class="text-lowercase btn btn-custom bbt" id="signOut">Sign Out</button>
-                </li>
-              </ul>
-              <ul class="hidden-xs hidden list-unstyled navbar-right signed-in">
-                <li class="dropdown">
-                  <a href="#" class="text-lowercase text-mono dropdown-toggle btn btn-custom bbt" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" id="signedIn">Signed In</a>
-                  <ul class="dropdown-menu flat">
-                    <li>
-                      <button type="submit" data-toggle="modal" role="button" data-target="#passwordModal" class="text-lowercase text-mono btn btn-custom bbt" id="password">Password</button>
-                    </li>
-                    <li>
-                      <button type="submit" role="button" class="text-lowercase text-mono btn btn-custom bbt" id="signOut">Sign Out</button>
-                    </li>
-                  </ul>
+                  <button type="submit" role="button" class="text-lowercase text-mono btn btn-custom bbt" id="signOut">Sign Out</button>
                 </li>
               </ul>
             </div>
@@ -56,7 +43,7 @@
                 <section class="intro">
                   <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                      <div class="box flat">
+                      <div class="box">
                         <div class="page-content">
                           <p class="text-sans">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni temporibus et quidem repellat quasi enim!</p>
                           <p class="text-sans">Sign up or sign in to continue.</p>
@@ -113,6 +100,16 @@
         </section>
         <section class="home">
           <div class="container-fluid">
+            <div class="row">
+              <div class="col-xs-6">
+                <section class="intro">
+                  <div class="box">
+                    <p class="text-sans">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni temporibus et quidem repellat quasi enim!</p>
+                    <p class="message"></p>
+                  </div>
+                </section>
+              </div>
+            </div>
             <div class="row">
               <div class="col-xs-6">
                 <div class="page-content"></div>

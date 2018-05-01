@@ -37,15 +37,9 @@ const showSignUp = () => {
 }
 
 const signUpSuccess = (data) => {
+  store.user = data.user
   clear()
   showSignIn()
-  $('.sign-up .message').removeClass('error')
-  $('.sign-up .message').html(' ')
-  store.user = data.user
-}
-
-const signUpFailure = () => {
-  authError()
 }
 
 const signInSuccess = (data) => {
@@ -56,20 +50,23 @@ const signInSuccess = (data) => {
   $('.signed-in').removeClass('hidden')
 }
 
-const signInFailure = () => {
-  authError()
+const signOutSuccess = () => {
+  $('.home').hide()
+  $('.welcome').show()
+  $('.signed-in').addClass('hidden')
+  store.user = null
 }
 
 const unauthorized = () => {
-  $('.sign-up, .message').hide()
+  $('.home, .sign-up, .message').hide()
 }
 
 module.exports = {
+  authError,
   showSignUp,
   showSignIn,
   signUpSuccess,
-  signUpFailure,
   signInSuccess,
-  signInFailure,
+  signOutSuccess,
   unauthorized
 }
