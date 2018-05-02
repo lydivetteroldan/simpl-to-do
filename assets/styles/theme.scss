@@ -8,7 +8,7 @@ html {
 
 body {
   background-color: $near-white;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 a {
@@ -22,19 +22,7 @@ a {
 .box {
   background-color: $white;
   border: 1px solid $gray;
-  padding: 2.5em 6em;
-}
-
-@media (max-width: $screen-md-max) {
-  .box {
-    padding: 2.5em 3em;
-  }
-}
-
-@media (max-width: $screen-xs-max) {
-  .box {
-    padding: 2em;
-  }
+  padding: 2em 3em;
 }
 
 .message {
