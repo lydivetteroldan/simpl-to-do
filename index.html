@@ -43,24 +43,11 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="text-lowercase text-sans text-strong modal-title" id="passwordModalLabel">Change Password</h4>
+                  <h4 class="text-sans text-strong modal-title" id="passwordModalLabel">Change Password</h4>
                 </div>
                 <div class="modal-body">
-                  <form id="password">
-                    <div class="form-group">
-                      <label for="inputPassword4" class="control-label text-uppercase text-mono text-strong">Current Password</label>
-                      <input type="password" id="inputPassword4" class="form-control" name="passwords[old]" placeholder="Enter your current password" required>
-                    </div>
-                    <div class="form-group">
-                      <label for="inputPassword5" class="control-label text-uppercase text-mono text-strong">New Password</label>
-                      <input type="password" id="inputPassword5" class="form-control" name="passwords[new]" placeholder="Enter your new password" required>
-                    </div>
-                    <div class="form-group">
-                      <button type="submit" class="text-lowercase btn btn-default btn-custom" id="passwordButton">Save</button>
-                      <br>
-                      <p class="message password-message"></p>
-                    </div>
-                  </form>
+                  <div id="passwordTemplate"></div>
+                  <p class="message password-message"></p>
                 </div>
               </div>
             </div>
@@ -82,13 +69,13 @@
                           <!-- Sign Up -->
                           <section class="sign-up">
                             <h3 class="text-sans text-strong h3">Sign Up <br><small>Please sign up to create a free account.</small></h3>
-                            <div class="form-template"></div>
+                            <div id="signUpTemplate"></div>
                             <small>If you already have an account, <br class="visible-xs-block"> sign in <button type="submit" class="btn btn-custom bbt" id="signInButton">here</button>.</small>
                           </section>
                           <!-- Sign In -->
                           <section class="sign-in">
                             <h3 class="text-sans text-strong h3">Sign In<br> <small>Please sign in to continue.</small></h3>
-                            <div class="form-template"></div>
+                            <div id="signInTemplate"></div>
                             <small>If you do not have an account, <br class="visible-xs-block"> sign up <button type="submit" class="btn btn-custom bbt" id="signUpButton">here</button>.</small>
                           </section>
                         </div>

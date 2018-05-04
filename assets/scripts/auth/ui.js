@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const passwordFormTemplate = require('../templates/password.handlebars')
 const signInTemplate = require('../templates/sign-in.handlebars')
 const signUpTemplate = require('../templates/sign-up.handlebars')
 
@@ -27,18 +28,29 @@ const onClose = () => {
   $('.modal').on('hidden.bs.modal', function (e) {
     clear()
   })
+
+  $('#passwordModal').on('hidden.bs.modal', function () {
+    $('#passwordTemplate').html(' ')
+  })
 }
 
 const showAlert = () => {
   $('.message').show()
 }
 
+const showPasswordForm = () => {
+  $('#passwordModal').on('shown.bs.modal', function () {
+    const passwordFormHtml = passwordFormTemplate()
+    $('#passwordTemplate').append(passwordFormHtml)
+  })
+}
+
 const showSignIn = () => {
   const signInHtml = signInTemplate()
   clear()
   $('.sign-up').hide()
-  $('.sign-in .form-template').html(' ')
-  $('.sign-in .form-template').append(signInHtml)
+  $('#signInTemplate').html(' ')
+  $('#signInTemplate').append(signInHtml)
   $('.sign-in').show('slow')
 }
 
@@ -46,8 +58,8 @@ const showSignUp = () => {
   const signUpHtml = signUpTemplate()
   clear()
   $('.sign-in').hide()
-  $('.sign-up .form-template').html(' ')
-  $('.sign-up .form-template').append(signUpHtml)
+  $('#signUpTemplate').html(' ')
+  $('#signUpTemplate').append(signUpHtml)
   $('.sign-up').show('slow')
 }
 
@@ -99,6 +111,7 @@ module.exports = {
   changePasswordError,
   changePasswordSuccess,
   onClose,
+  showPasswordForm,
   showSignUp,
   showSignIn,
   signUpSuccess,
