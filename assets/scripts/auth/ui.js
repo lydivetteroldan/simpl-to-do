@@ -38,7 +38,7 @@ const showSignIn = () => {
   clear()
   $('.sign-up').hide()
   $('.sign-in .form-template').html(' ')
-  $('.sign-in .form-template').prepend(signInHtml)
+  $('.sign-in .form-template').append(signInHtml)
   $('.sign-in').show('slow')
 }
 
@@ -47,7 +47,7 @@ const showSignUp = () => {
   clear()
   $('.sign-in').hide()
   $('.sign-up .form-template').html(' ')
-  $('.sign-up .form-template').prepend(signUpHtml)
+  $('.sign-up .form-template').append(signUpHtml)
   $('.sign-up').show('slow')
 }
 
@@ -85,7 +85,7 @@ const changePasswordError = () => {
 
 const signOutSuccess = () => {
   $('.home').hide()
-  $('.welcome').show()
+  $('.welcome').show('slow')
   $('.signed-in').addClass('hidden')
   store.user = null
 }
