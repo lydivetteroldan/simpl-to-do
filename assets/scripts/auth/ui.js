@@ -35,7 +35,7 @@ const onClose = () => {
 }
 
 const showAlert = () => {
-  $('.message').show()
+  $('.message').fadeIn()
 }
 
 const showPasswordForm = () => {
@@ -51,7 +51,7 @@ const showSignIn = () => {
   $('.sign-up').hide()
   $('#signInTemplate').html(' ')
   $('#signInTemplate').append(signInHtml)
-  $('.sign-in').show('slow')
+  $('.sign-in').fadeIn()
 }
 
 const showSignUp = () => {
@@ -60,7 +60,7 @@ const showSignUp = () => {
   $('.sign-in').hide()
   $('#signUpTemplate').html(' ')
   $('#signUpTemplate').append(signUpHtml)
-  $('.sign-up').show('slow')
+  $('.sign-up').fadeIn()
 }
 
 const signUpSuccess = (data) => {
