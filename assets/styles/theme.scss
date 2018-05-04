@@ -22,14 +22,15 @@ a {
 .box {
   background-color: $white;
   border: 1px solid $gray;
-  padding: 2em 3em;
+  margin: $medium-padding 0;
+  padding: 2em;
 }
 
 .message {
   border: 1px dashed;
   color: $dark-gray;
   margin: $medium-padding 0;
-  padding: 8px;
+  padding: 8px 4em;
 
   &.error {
     color: $red;
