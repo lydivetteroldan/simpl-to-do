@@ -16,21 +16,21 @@
         <nav class="navbar navbar-static-top page-navbar">
           <div class="container-fluid navbar-container">
             <div class="navbar-header">
-              <button type="button" class="hidden navbar-toggle collapsed" data-toggle="collapse" data-target="#page-navbar-collapse" aria-expanded="false">
+              <button type="button" class="hidden navbar-toggle collapsed" data-toggle="collapse" data-target="#pageNavbarCollapse" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="text-lowercase btn btn-custom btn-main" href="#">Simpl To-Do</a>
+              <a class="btn btn-custom btn-main" href="#">Simpl To-Do</a>
             </div>
-            <div class="collapse navbar-collapse" id="page-navbar-collapse">
+            <div class="collapse navbar-collapse" id="pageNavbarCollapse">
               <ul class="hidden navbar-right list-inline signed-in">
                 <li>
-                  <button type="submit" data-toggle="modal" role="button" data-target="#passwordModal" class="text-lowercase text-mono btn btn-default btn-custom" id="passwordModalButton">Password</button>
+                  <button type="button" data-toggle="modal" role="button" data-target="#passwordModal" class="text-strong btn btn-default btn-custom" id="passwordModalButton">Password</button>
                 </li>
                 <li>
-                  <button type="submit" role="button" class="text-lowercase text-mono btn btn-default btn-custom" id="signOut">Sign Out</button>
+                  <button type="submit" role="button" class="text-strong btn btn-default btn-custom" id="signOut">Sign Out</button>
                 </li>
               </ul>
             </div>
@@ -88,23 +88,77 @@
           </div>
         </section>
         <section class="home">
-          <div class="container-fluid">
+          <div class="container">
             <div class="row">
-              <div class="col-xs-6">
-                <section class="intro">
-                  <div class="box">
-                    <p class="text-sans intro-text"><span class="text-lowercase text-sans text-strong">Simpl To-Do</span> provides you a basic way to create and update your to-do list.</p>
-                    <p class="message"></p>
+              <div class="col-md-6 col-md-offset-3">
+                <div class="row">
+                  <div class="col-md-12">
+                    <section class="intro">
+                      <div class="box">
+                        <p class="text-sans intro-text"><span class="text-lowercase text-sans text-strong">Simpl To-Do</span> provides you a basic way to create and update your to-do list.</p>
+                        <p class="message"></p>
+                      </div>
+                    </section>
                   </div>
-                </section>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-6">
-                <div class="page-content"></div>
-              </div>
-              <div class="col-md-6">
-                <div class="page-forms"></div>
+                  <div class="col-md-12">
+                    <div class="box">
+                      <h3 class="text-sans text-strong h3">
+                        To–Do
+                        <span class="pull-right">
+                          <button class="btn btn-default btn-custom" type="button" data-toggle="collapse" data-target="#createFormCollapse" aria-expanded="false" aria-controls="createFormCollapse" id="createButton">
+                            Create a To-Do
+                          </button>
+                        </span>
+                      </h3>
+                      <div class="page-forms">
+                        <div class="collapse" id="createFormCollapse">
+                          <form id="createForm">
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <input type="checkbox" name="todo[done]" aria-label="checkbox">
+                              </span>
+                              <input type="text" class="form-control" name="todo[content]" aria-label="checkbox">
+                              <span class="input-group-btn">
+                                <button class="btn btn-default btn-custom" type="submit">Create</button>
+                              </span>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="collapse" id="editFormCollapse">
+                          <form id="editForm">
+                            <div class="input-group">
+                              <span class="input-group-addon">
+                                <input type="checkbox" name="todo[done]" aria-label="checkbox">
+                              </span>
+                              <input type="text" class="form-control" name="todo[content]" aria-label="checkbox">
+                              <span class="input-group-btn">
+                                <button class="btn btn-default btn-custom" type="submit">Save</button>
+                              </span>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="page-content">
+                        <ul class="list-unstyled to-do-list">
+                          <li class="to-do-list-item">
+                            <form id="listItemForm">
+                               <div class="input-group">
+                                 <span class="input-group-addon">
+                                   <input type="checkbox" name="todo[done]" aria-label="checkbox">
+                                 </span>
+                                <label name="todo[content]" class="form-control">Something you need to do</label>
+                                <span class="input-group-btn">
+                                  <button type="button" class="btn btn-default btn-custom" data-toggle="collapse" data-target="#editFormCollapse" aria-expanded="false" aria-controls="editFormCollapse" id="editButton">Edit</button>
+                                  <button type="button" class="btn btn-default btn-custom" id="deleteButton">Delete</button>
+                                </span>
+                              </div><!-- /input-group -->
+                            </form>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -113,7 +167,7 @@
           <div class="container-fluid footer-container text-right">
             <div class="row">
               <div class="col-md-12">
-                <small class="footer-text">made by <a class="text-mono btn btn-custom bbt" href="https://github.com/lydivetteroldan" target="_blank">Lydivette Roldán</a></small>
+                <small class="footer-text">made by <a class="btn btn-custom bbt" href="https://github.com/lydivetteroldan" target="_blank">Lydivette Roldán</a></small>
               </div>
             </div>
           </div>
