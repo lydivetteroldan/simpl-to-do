@@ -1,18 +1,23 @@
-<ul class="list-unstyled to-do-list">
+<ul class="row list-unstyled to-do-list">
   {{#each todos as |todo|}}
-  <li class="to-do-list-item" data-id={{todo.id}}>
-    <form class="list-item-form">
-       <div class="input-group">
-         <span class="input-group-addon">
-           <input type="checkbox" name="{{todo.done}}" aria-label="checkbox" class="checkbox">
-         </span>
-        <label name="{{todo.content}}" class="form-control">{{todo.content}}</label>
-        <span class="input-group-btn">
-          <button type="button" class="btn btn-default btn-custom edit" data-toggle="collapse" data-target="#editFormCollapse" aria-expanded="false" aria-controls="editFormCollapse">Edit</button>
-          <button type="button" class="btn btn-default btn-custom delete">Delete</button>
-        </span>
+  <li class="to-do" data-id={{todo.id}}>
+    <div class="col-xs-8">
+      <form class="item-form">
+        <div class="form-group">
+          <div class="checkbox">
+            <label name="{{todo.content}}">
+              <input type="checkbox" name="{{todo.done}}" aria-label="checkbox"> {{todo.content}}
+            </label>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="col-xs-4">
+      <div class="btn-group btn-group-sm pull-right">
+        <button type="button" class="btn btn-default btn-custom edit" data-toggle="collapse" data-target="#editFormCollapse" aria-expanded="false" aria-controls="editFormCollapse">Edit</button>
+        <button type="button" class="btn btn-default btn-custom delete">Delete</button>
       </div>
-    </form>
+    </div>
   </li>
   {{/each}}
 </ul>

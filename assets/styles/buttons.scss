@@ -37,6 +37,12 @@
   }
 }
 
+.btn-group-sm {
+  .btn {
+    @extend .flat;
+  }
+}
+
 .btn-main {
   padding: 0;
 }

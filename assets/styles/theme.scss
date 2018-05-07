@@ -56,6 +56,16 @@ a {
   margin-top: $medium-padding;
 }
 
+.to-do-list {
+  margin-bottom: 0;
+  margin-top: $medium-padding * 2;
+
+  .checkbox,
+  .form-group {
+    margin: 0;
+  }
+}
+
 textarea {
   resize: none;
 }
