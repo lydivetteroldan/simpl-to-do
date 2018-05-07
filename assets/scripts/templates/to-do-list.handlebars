@@ -1,15 +1,15 @@
 <ul class="list-unstyled to-do-list">
   {{#each todos as |todo|}}
   <li class="to-do-list-item" data-id={{todo.id}}>
-    <form id="listItemForm">
+    <form class="list-item-form">
        <div class="input-group">
          <span class="input-group-addon">
-           <input type="checkbox" name="{{todo.done}}" aria-label="checkbox">
+           <input type="checkbox" name="{{todo.done}}" aria-label="checkbox" class="checkbox">
          </span>
         <label name="{{todo.content}}" class="form-control">{{todo.content}}</label>
         <span class="input-group-btn">
-          <button type="button" class="btn btn-default btn-custom" data-toggle="collapse" data-target="#editFormCollapse" aria-expanded="false" aria-controls="editFormCollapse" id="editButton">Edit</button>
-          <button type="button" class="btn btn-default btn-custom" id="deleteButton">Delete</button>
+          <button type="button" class="btn btn-default btn-custom edit" data-toggle="collapse" data-target="#editFormCollapse" aria-expanded="false" aria-controls="editFormCollapse">Edit</button>
+          <button type="button" class="btn btn-default btn-custom delete">Delete</button>
         </span>
       </div>
     </form>
