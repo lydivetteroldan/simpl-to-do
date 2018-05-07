@@ -1,17 +1,9 @@
-.welcome {
-  .intro {
-    padding: 0 2em 2em;
-
-    > .divider {
-      color: $black;
-    }
-  }
+.section-padding {
+  padding: 0 2em;
 }
 
 @media (min-width: $screen-md-max) {
-  .welcome {
-    .intro {
-      padding: 0 4em 2em;
-    }
+  .section-padding {
+    padding: 0 4em;
   }
 }

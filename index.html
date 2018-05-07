@@ -13,30 +13,32 @@
     </head>
     <body>
       <div id="page">
-        <nav class="navbar navbar-static-top page-navbar">
-          <div class="container-fluid navbar-container">
-            <div class="navbar-header">
-              <button type="button" class="hidden navbar-toggle collapsed" data-toggle="collapse" data-target="#pageNavbarCollapse" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <a class="btn btn-custom btn-main" href="#">Simpl To-Do</a>
+        <header id="header">
+          <nav class="navbar navbar-static-top page-navbar">
+            <div class="container-fluid navbar-container">
+              <div class="navbar-header">
+                <button type="button" class="hidden navbar-toggle collapsed" data-toggle="collapse" data-target="#pageNavbarCollapse" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="btn btn-custom btn-main" href="#">Simpl To-Do</a>
+              </div>
+              <div class="collapse navbar-collapse" id="pageNavbarCollapse">
+                <ul class="hidden navbar-right list-inline" id="authenticated">
+                  <li>
+                    <button type="button" data-toggle="modal" role="button" data-target="#passwordModal" class="text-strong btn btn-default btn-custom" id="passwordModalButton">Password</button>
+                  </li>
+                  <li>
+                    <button type="submit" role="button" class="text-strong btn btn-default btn-custom" id="signOut">Sign Out</button>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="collapse navbar-collapse" id="pageNavbarCollapse">
-              <ul class="hidden navbar-right list-inline signed-in">
-                <li>
-                  <button type="button" data-toggle="modal" role="button" data-target="#passwordModal" class="text-strong btn btn-default btn-custom" id="passwordModalButton">Password</button>
-                </li>
-                <li>
-                  <button type="submit" role="button" class="text-strong btn btn-default btn-custom" id="signOut">Sign Out</button>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <section class="modals">
+          </nav>
+        </header>
+        <section id="modals">
           <!-- Modal: Change Password -->
           <div class="modal fade password" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" id="passwordModal">
             <div class="modal-dialog modal-sm" role="document">
@@ -53,117 +55,108 @@
             </div>
           </div>
         </section>
-        <section class="welcome">
-          <div class="container">
-            <div class="row">
-              <div class="col-md-8 col-md-offset-2">
-                <section class="intro">
-                  <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                      <div class="box">
-                        <p class="text-sans intro-text"><span class="text-lowercase text-sans text-strong">Simpl To-Do</span> provides you a basic way to create and update your to-do list.</p>
-                        <p class="message"></p>
-                      </div>
-                      <div class="box">
-                        <div class="page-forms">
-                          <!-- Sign Up -->
-                          <section class="sign-up">
-                            <h3 class="text-sans text-strong h3">Sign Up <br><small>Please sign up to create a free account.</small></h3>
-                            <div id="signUpTemplate"></div>
-                            <small>If you already have an account, <br class="visible-xs-block"> sign in <button type="submit" class="btn btn-custom bbt" id="signInButton">here</button>.</small>
-                          </section>
-                          <!-- Sign In -->
-                          <section class="sign-in">
-                            <h3 class="text-sans text-strong h3">Sign In<br> <small>Please sign in to continue.</small></h3>
-                            <div id="signInTemplate"></div>
-                            <small>If you do not have an account, <br class="visible-xs-block"> sign up <button type="submit" class="btn btn-custom bbt" id="signUpButton">here</button>.</small>
-                          </section>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="home">
+        <section id="content">
           <div class="container">
             <div class="row">
               <div class="col-md-6 col-md-offset-3">
                 <div class="row">
                   <div class="col-md-12">
-                    <section class="intro">
+                    <!-- Introduction -->
+                    <section class="section-padding" id="introduction">
                       <div class="box">
                         <p class="text-sans intro-text"><span class="text-lowercase text-sans text-strong">Simpl To-Do</span> provides you a basic way to create and update your to-do list.</p>
                         <p class="message"></p>
                       </div>
                     </section>
                   </div>
+                </div>
+                <div class="row">
                   <div class="col-md-12">
-                    <div class="box">
-                      <h3 class="text-sans text-strong h3">
-                        To–Do
-                        <span class="pull-right">
-                          <button class="btn btn-default btn-custom" type="button" data-toggle="collapse" data-target="#createFormCollapse" aria-expanded="false" aria-controls="createFormCollapse" id="createButton">
-                            Create a To-Do
-                          </button>
-                        </span>
-                      </h3>
-                      <div class="page-forms">
-                        <div class="collapse" id="createFormCollapse">
-                          <form id="createForm">
-                            <div class="input-group">
-                              <span class="input-group-addon">
-                                <input type="checkbox" name="todo[done]" aria-label="checkbox">
-                              </span>
-                              <input type="text" class="form-control" name="todo[content]" aria-label="checkbox">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default btn-custom" type="submit">Create</button>
-                              </span>
-                            </div>
-                          </form>
-                        </div>
-                        <div class="collapse" id="editFormCollapse">
-                          <form id="editForm">
-                            <div class="input-group">
-                              <span class="input-group-addon">
-                                <input type="checkbox" name="todo[done]" aria-label="checkbox">
-                              </span>
-                              <input type="text" class="form-control" name="todo[content]" aria-label="checkbox">
-                              <span class="input-group-btn">
-                                <button class="btn btn-default btn-custom" type="submit">Save</button>
-                              </span>
-                            </div>
-                          </form>
-                        </div>
+                    <!-- Authentication -->
+                    <section class="section-padding" id="authentication">
+                      <div class="box">
+                        <section class="sign-up" id="signUpSection">
+                          <h3 class="text-sans text-strong h3">Sign Up <br><small>Please sign up to create a free account.</small></h3>
+                          <div id="signUpTemplate"></div>
+                          <small>If you already have an account, <br class="visible-xs-block"> sign in <button type="submit" class="btn btn-custom bbt" id="signInButton">here</button>.</small>
+                        </section>
+                        <section class="sign-in" id="signInSection">
+                          <h3 class="text-sans text-strong h3">Sign In<br> <small>Please sign in to continue.</small></h3>
+                          <div id="signInTemplate"></div>
+                          <small>If you do not have an account, <br class="visible-xs-block"> sign up <button type="submit" class="btn btn-custom bbt" id="signUpButton">here</button>.</small>
+                        </section>
                       </div>
-                      <div class="page-content">
-                        <ul class="list-unstyled to-do-list">
-                          <li class="to-do-list-item">
-                            <form id="listItemForm">
-                               <div class="input-group">
-                                 <span class="input-group-addon">
-                                   <input type="checkbox" name="todo[done]" aria-label="checkbox">
-                                 </span>
-                                <label name="todo[content]" class="form-control">Something you need to do</label>
-                                <span class="input-group-btn">
-                                  <button type="button" class="btn btn-default btn-custom" data-toggle="collapse" data-target="#editFormCollapse" aria-expanded="false" aria-controls="editFormCollapse" id="editButton">Edit</button>
-                                  <button type="button" class="btn btn-default btn-custom" id="deleteButton">Delete</button>
+                    </section>
+                    <!-- Home -->
+                    <section class="section-padding" id="home">
+                      <div class="box">
+                        <section id="title">
+                          <h3 class="text-sans text-strong h3">
+                            To–Do
+                            <span class="pull-right">
+                              <button class="btn btn-default btn-custom" type="button" data-toggle="collapse" data-target="#createFormCollapse" aria-expanded="false" aria-controls="createFormCollapse" id="createButton">
+                                Create a To-Do
+                              </button>
+                            </span>
+                          </h3>
+                        </section>
+                        <section id="forms">
+                          <!-- Create -->
+                          <div class="collapse" id="createFormCollapse">
+                            <form id="createForm">
+                              <div class="input-group">
+                                <span class="input-group-addon">
+                                  <input type="checkbox" name="todo[done]" aria-label="checkbox">
                                 </span>
-                              </div><!-- /input-group -->
+                                <input type="text" class="form-control" name="todo[content]" aria-label="checkbox">
+                                <span class="input-group-btn">
+                                  <button class="btn btn-default btn-custom" type="submit">Create</button>
+                                </span>
+                              </div>
                             </form>
-                          </li>
-                        </ul>
+                          </div>
+                          <!-- Update -->
+                          <div class="collapse" id="editFormCollapse">
+                            <form id="editForm">
+                              <div class="input-group">
+                                <span class="input-group-addon">
+                                  <input type="checkbox" name="todo[done]" aria-label="checkbox">
+                                </span>
+                                <input type="text" class="form-control" name="todo[content]" aria-label="checkbox">
+                                <span class="input-group-btn">
+                                  <button class="btn btn-default btn-custom" type="submit">Save</button>
+                                </span>
+                              </div>
+                            </form>
+                          </div>
+                        </section>
+                        <section id="list">
+                          <ul class="list-unstyled to-do-list">
+                            <li class="to-do-list-item">
+                              <form id="listItemForm">
+                                 <div class="input-group">
+                                   <span class="input-group-addon">
+                                     <input type="checkbox" name="todo[done]" aria-label="checkbox">
+                                   </span>
+                                  <label name="todo[content]" class="form-control">Something you need to do</label>
+                                  <span class="input-group-btn">
+                                    <button type="button" class="btn btn-default btn-custom" data-toggle="collapse" data-target="#editFormCollapse" aria-expanded="false" aria-controls="editFormCollapse" id="editButton">Edit</button>
+                                    <button type="button" class="btn btn-default btn-custom" id="deleteButton">Delete</button>
+                                  </span>
+                                </div>
+                              </form>
+                            </li>
+                          </ul>
+                        </section>
                       </div>
-                    </div>
+                    </section>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <footer class="footer">
+        <footer class="footer" id="footer">
           <div class="container-fluid footer-container text-right">
             <div class="row">
               <div class="col-md-12">

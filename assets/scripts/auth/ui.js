@@ -48,19 +48,19 @@ const showPasswordForm = () => {
 const showSignIn = () => {
   const signInHtml = signInTemplate()
   clear()
-  $('.sign-up').hide()
+  $('#signUpSection').hide()
   $('#signInTemplate').html(' ')
   $('#signInTemplate').append(signInHtml)
-  $('.sign-in').fadeIn()
+  $('#signInSection').fadeIn()
 }
 
 const showSignUp = () => {
   const signUpHtml = signUpTemplate()
   clear()
-  $('.sign-in').hide()
+  $('#signInSection').hide()
   $('#signUpTemplate').html(' ')
   $('#signUpTemplate').append(signUpHtml)
-  $('.sign-up').fadeIn()
+  $('#signUpSection').fadeIn()
 }
 
 const signUpSuccess = (data) => {
@@ -72,9 +72,9 @@ const signUpSuccess = (data) => {
 const signInSuccess = (data) => {
   store.user = data.user
   clear()
-  $('.welcome').hide()
-  $('.home').show('slow')
-  $('.signed-in').removeClass('hidden')
+  $('#authentication').hide()
+  $('#home').show('slow')
+  $('#authenticated').removeClass('hidden')
 }
 
 const changePasswordSuccess = (data) => {
@@ -96,14 +96,14 @@ const changePasswordError = () => {
 }
 
 const signOutSuccess = () => {
-  $('.home').hide()
-  $('.welcome').show('slow')
-  $('.signed-in').addClass('hidden')
+  $('#home').hide()
+  $('#authentication').show('slow')
+  $('#authenticated').addClass('hidden')
   store.user = null
 }
 
 const unauthorized = () => {
-  $('.home, .sign-up, .message').hide()
+  $('#home, #signUpSection, .message').hide()
 }
 
 module.exports = {
