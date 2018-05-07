@@ -3,6 +3,17 @@
 const config = require('../config')
 const store = require('../store')
 
+const index = function () {
+  console.log('on showAll store is', store)
+  return $.ajax({
+    url: config.apiUrl + '/todos',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const signUp = function (data) {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
@@ -49,6 +60,7 @@ const signOut = function () {
 }
 
 module.exports = {
+  index,
   signUp,
   signIn,
   changePassword,

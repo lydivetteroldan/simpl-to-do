@@ -4,6 +4,12 @@ const api = require('./api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
 
+const onShowAll = () => {
+  api.index()
+    .then(ui.onShowAllSuccess)
+    .catch(ui.onShowAllFailure)
+}
+
 const onSignUp = (event) => {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -17,6 +23,7 @@ const onSignIn = (event) => {
   const data = getFormFields(event.target)
   api.signIn(data)
     .then(ui.signInSuccess)
+    .then(() => onShowAll())
     .catch(ui.authError)
 }
 
