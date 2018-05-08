@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const todoTemplate = require('../templates/to-do.handlebars')
 
 const appError = () => {
   clear()
@@ -27,11 +28,18 @@ const onHiddenModal = () => {
   })
 }
 
+const onShowSuccess = (data) => {
+  const todoHtml = todoTemplate({ todo: data.todo })
+  $('#todoTemplate').html(' ')
+  $('#todoTemplate').append(todoHtml)
+}
+
 const showAlert = () => {
   $('.message').fadeIn()
 }
 
 module.exports = {
   appError,
-  onHiddenModal
+  onHiddenModal,
+  onShowSuccess
 }

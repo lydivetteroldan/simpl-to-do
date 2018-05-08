@@ -54,6 +54,41 @@
               </div>
             </div>
           </div>
+          <!-- Modal: Create -->
+          <div class="modal fade create" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" id="createModal">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="text-sans text-strong modal-title" id="createModalLabel">Create</h4>
+                </div>
+                <div class="modal-body">
+                  <div id="createTemplate"></div>
+                  <p class="message"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal: To-Do -->
+          <div class="modal fade todo" tabindex="-1" role="dialog" aria-labelledby="todoModalLabel" id="todoModal">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="text-sans text-strong modal-title" id="todoModalLabel">To-Do</h4>
+                </div>
+                <div class="modal-body">
+                  <div id="todoTemplate"></div>
+                </div>
+                <div class="modal-footer">
+                  <div class="btn-group btn-group-sm">
+                    <button type="button" class="btn btn-default btn-custom edit" data-toggle="collapse" data-target="#editFormCollapse" aria-expanded="false" aria-controls="editFormCollapse">Edit</button>
+                    <button type="button" class="btn btn-default btn-custom delete">Delete</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
         <section id="content">
           <div class="container">
@@ -94,41 +129,11 @@
                           <h3 class="text-sans text-strong h3">
                             To–Do
                             <span class="pull-right">
-                              <button class="btn btn-default btn-custom" type="button" data-toggle="collapse" data-target="#createFormCollapse" aria-expanded="false" aria-controls="createFormCollapse" id="createButton">
+                              <button type="button" data-toggle="modal" role="button" data-target="#createModal" class="btn btn-default btn-custom">
                                 Create a To-Do
                               </button>
                             </span>
                           </h3>
-                        </section>
-                        <section id="forms">
-                          <!-- Create -->
-                          <div class="collapse" id="createFormCollapse">
-                            <form id="createForm">
-                              <div class="input-group">
-                                <span class="input-group-addon">
-                                  <input type="checkbox" name="todo[done]" aria-label="checkbox">
-                                </span>
-                                <input type="text" class="form-control" name="todo[content]" aria-label="checkbox">
-                                <span class="input-group-btn">
-                                  <button class="btn btn-default btn-custom" type="submit">Create</button>
-                                </span>
-                              </div>
-                            </form>
-                          </div>
-                          <!-- Update -->
-                          <div class="collapse" id="editFormCollapse">
-                            <form id="editForm">
-                              <div class="input-group">
-                                <span class="input-group-addon">
-                                  <input type="checkbox" name="todo[done]" aria-label="checkbox">
-                                </span>
-                                <input type="text" class="form-control" name="todo[content]" aria-label="checkbox">
-                                <span class="input-group-btn">
-                                  <button class="btn btn-default btn-custom" type="submit">Save</button>
-                                </span>
-                              </div>
-                            </form>
-                          </div>
                         </section>
                         <section id="list"></section>
                       </div>
