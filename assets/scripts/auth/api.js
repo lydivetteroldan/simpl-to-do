@@ -4,7 +4,6 @@ const config = require('../config')
 const store = require('../store')
 
 const index = function () {
-  console.log('on showAll store is', store)
   return $.ajax({
     url: config.apiUrl + '/todos',
     method: 'GET',

@@ -89,8 +89,6 @@ const signUpSuccess = (data) => {
 
 const signInSuccess = (data) => {
   store.user = data.user
-  console.log('on signInSuccess data is', data)
-  console.log('on signInSuccess store is', store)
   clear()
   $('#authentication').hide()
   $('#home').show('slow')
