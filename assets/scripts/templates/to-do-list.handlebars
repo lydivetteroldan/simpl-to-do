@@ -1,16 +1,15 @@
-<ul class="row list-unstyled to-do-list" id="todoList">
+<ul class="list-unstyled to-do-list" id="todoList">
   {{#each todos as |todo|}}
-  <li class="to-do see-more" data-toggle="modal" data-target="#todoModal">
-    <div class="col-xs-12">
-      <form class="item-form">
-        <div class="form-group">
-          <div class="checkbox" data-id={{todo.id}}>
-            <label name="{{todo.content}}">
-              <input type="checkbox" name="{{todo.done}}" aria-label="checkbox"> {{todo.content}}
-            </label>
-          </div>
-        </div>
-      </form>
+  <li class="to-do">
+    <div class="checkbox">
+      <button type="button" data-toggle="modal" data-target="#todoModal" class="btn btn-link btn-custom see-more" aria-label="See More">
+        <span>
+          <i class="far fa-edit" aria-hidden="true" data-id={{todo.id}}></i>
+        </span>
+      </button>
+      <label name="{{todo.content}}">
+        <input type="checkbox" name="{{todo.done}}" aria-label="checkbox"> {{todo.content}}
+      </label>
     </div>
   </li>
   {{/each}}

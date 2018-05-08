@@ -21,12 +21,17 @@
       border-bottom: 1px solid $dark-gray;
     }
   }
+
+  &.see-more {
+    border-right: 1px solid;
+  }
 }
 
 .btn-default {
   @extend .flat;
 
   border: 1px solid $black;
+  border-bottom: 2px solid;
 
   &:active,
   &:focus,
@@ -37,9 +42,13 @@
   }
 }
 
-.btn-group-sm {
-  .btn {
-    @extend .flat;
+.btn-group {
+  &-lg,
+  &-sm,
+  &-xs {
+    .btn {
+      @extend .flat;
+    }
   }
 }
 

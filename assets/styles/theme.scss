@@ -57,12 +57,17 @@ a {
 }
 
 .to-do-list {
+  border: 1px solid;
   margin-bottom: 0;
   margin-top: $medium-padding * 2;
 
   .checkbox,
   .form-group {
     margin: 0;
+  }
+
+  .to-do {
+    border-bottom: 1px solid;
   }
 }
 
