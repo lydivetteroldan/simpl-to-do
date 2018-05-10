@@ -34,6 +34,14 @@ const onShowSuccess = (data) => {
   $('#todoTemplate').append(todoHtml)
 }
 
+const onUpdateSuccess = () => {
+  console.log('onUpdateSuccess! it works')
+}
+
+const onUpdateFailure = () => {
+  console.log('onUpdateFailure! try again')
+}
+
 const showAlert = () => {
   $('.message').fadeIn()
 }
@@ -41,5 +49,7 @@ const showAlert = () => {
 module.exports = {
   appError,
   onHiddenModal,
-  onShowSuccess
+  onShowSuccess,
+  onUpdateSuccess,
+  onUpdateFailure
 }
