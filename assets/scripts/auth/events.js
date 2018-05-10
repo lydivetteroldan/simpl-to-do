@@ -4,10 +4,13 @@ const api = require('./api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
 
+const todosAPI = require('../todos/api')
+const todosUI = require('../todos/ui')
+
 const onShowAll = () => {
-  api.index()
-    .then(ui.onShowAllSuccess)
-    .catch(ui.onShowAllFailure)
+  todosAPI.index()
+    .then(todosUI.onShowAllSuccess)
+    .catch(todosUI.onShowAllFailure)
 }
 
 const onSignUp = (event) => {

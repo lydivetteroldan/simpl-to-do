@@ -4,7 +4,6 @@ const store = require('../store')
 const passwordFormTemplate = require('../templates/password.handlebars')
 const signInTemplate = require('../templates/sign-in.handlebars')
 const signUpTemplate = require('../templates/sign-up.handlebars')
-const todoListTemplate = require('../templates/to-do-list.handlebars')
 
 const authError = () => {
   clear()
@@ -17,10 +16,6 @@ const clear = () => {
   $('.message').hide()
   $('.message').removeClass('error')
   $('.message').html(' ')
-}
-
-const clearList = () => {
-  $('#list').html(' ')
 }
 
 const error = () => {
@@ -37,19 +32,6 @@ const onClose = () => {
   $('#passwordModal').on('hidden.bs.modal', function () {
     $('#passwordTemplate').html(' ')
   })
-}
-
-const onShowAllSuccess = (data) => {
-  const showTodoListHtml = todoListTemplate({ todos: data.todos })
-  store.data = data
-  clearList()
-  $('#list').append(showTodoListHtml)
-}
-
-const onShowAllFailure = () => {
-  const message = 'Your list is empty. Create a to-do.'
-  clearList()
-  $('#list').append(message)
 }
 
 const showAlert = () => {
@@ -129,8 +111,6 @@ module.exports = {
   changePasswordError,
   changePasswordSuccess,
   onClose,
-  onShowAllSuccess,
-  onShowAllFailure,
   showPasswordForm,
   showSignUp,
   showSignIn,

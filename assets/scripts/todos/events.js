@@ -4,6 +4,12 @@ const api = require('./api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
 
+const onShowAll = () => {
+  api.index()
+    .then(ui.onShowAllSuccess)
+    .catch(ui.onShowAllFailure)
+}
+
 const onShow = (event) => {
   event.preventDefault()
   const id = event.target.dataset.id
@@ -26,6 +32,7 @@ const onUpdate = (event) => {
   const data = getFormFields(event.target)
   api.update(data, id)
     .then(ui.onUpdateSuccess)
+    .then(() => onShowAll())
     .catch(ui.onUpdateFailure)
 }
 
