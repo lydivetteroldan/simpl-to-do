@@ -48,6 +48,14 @@ a {
   @extend .flat;
 }
 
+.form {
+  &.update-done {
+    border-right: 1px solid;
+    display: inline-block;
+    padding: 10px 15px;
+  }
+}
+
 .modal {
   background: rgba(255, 255, 255, 0.5);
 }

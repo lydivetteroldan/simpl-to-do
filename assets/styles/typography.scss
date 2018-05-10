@@ -5,10 +5,12 @@ body {
 }
 
 .btn-custom {
-  text-transform: lowercase;
-
   &:not(.btn-main) {
     @extend .text-mono;
+  }
+
+  &:not(.see-more) {
+    text-transform: lowercase;
   }
 }
 
