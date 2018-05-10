@@ -1,16 +1,13 @@
 <ul class="list-unstyled to-do-list" id="todoList">
   {{#each todos as |todo|}}
   <li class="to-do">
-    <div class="checkbox">
-      <button type="button" data-toggle="modal" data-target="#todoModal" class="btn btn-link btn-custom see-more" aria-label="See More">
-        <span>
-          <i class="far fa-edit" aria-hidden="true" data-id={{todo.id}}></i>
-        </span>
-      </button>
-      <label name="{{todo.content}}">
-        <input type="checkbox" name="{{todo.done}}" aria-label="checkbox"> {{todo.content}}
-      </label>
-    </div>
+    <form class="form update-done">
+      <input type="hidden" name="todo[content]">
+      <input type="checkbox" name="todo[done]" aria-label="checkbox" data-id={{todo.id}}>
+    </form>
+    <a role="button" name="{{todo.content}}" data-id={{todo.id}} data-toggle="modal" data-target="#todoModal" class="btn btn-link btn-custom see-more">
+      {{todo.content}}
+    </a>
   </li>
   {{/each}}
 </ul>

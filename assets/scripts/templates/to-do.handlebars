@@ -1,22 +1,9 @@
-<div class="to-do" data-id={{todo.id}}>
-  <div class="checkbox">
-    <label name="{{todo.content}}">
-      <input type="checkbox" name="{{todo.done}}" aria-label="checkbox" disabled> {{todo.content}}
-    </label>
+<form class="form update-content" data-id={{todo.id}}>
+  <div class="form-group">
+    <input type="hidden" name="todo[done]">
+    <input type="text" class="form-control input-sm" name="todo[content]" placeholder="{{todo.content}}">
   </div>
-  <!-- Update -->
-  <div class="collapse fade" id="editFormCollapse">
-    <form id="editForm">
-      <div class="input-group">
-        <span class="input-group-addon">
-          <input type="checkbox" name="{{todo.done}}" aria-label="checkbox">
-        </span>
-        <input type="text" class="form-control" name="{{todo.content}}" aria-label="checkbox">
-        <input type="hidden" name="{{todo.id}}" id="editFormId">
-        <span class="input-group-btn">
-          <button class="btn btn-default btn-custom" type="submit">Save</button>
-        </span>
-      </div>
-    </form>
+  <div class="form-group text-right">
+    <button class="btn btn-default btn-sm btn-custom" type="submit">Update</button>
   </div>
-</div>
+</form>
