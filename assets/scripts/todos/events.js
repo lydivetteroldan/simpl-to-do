@@ -33,7 +33,7 @@ const onUpdate = (event) => {
   api.update(data, id)
     .then(ui.onUpdateSuccess)
     .then(() => onShowAll())
-    .catch(ui.onUpdateFailure)
+    .catch(ui.appError)
 }
 
 const eventHandlers = () => {
