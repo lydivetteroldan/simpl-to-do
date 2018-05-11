@@ -2,14 +2,14 @@
   {{#each todos as |todo|}}
   <li class="to-do">
     <form class="form update-done">
-      <input type="hidden" name="todo[content]">
-      <input type="checkbox" name="todo[done]" aria-label="checkbox" data-id={{todo.id}}>
+      <input type="hidden" name="todo[content]" value="{{todo.content}}" class="to-do-content">
+      <input type="checkbox" name="todo[done]" aria-label="checkbox" class="to-do-done" data-id={{todo.id}}>
     </form>
     <a role="button" name="{{todo.content}}" data-id={{todo.id}} data-toggle="modal" data-target="#todoModal" class="btn btn-link btn-custom see-more">
       {{todo.content}}
     </a>
-    <a role="button" class="close btn btn-link btn-custom">
-      <span aria-hidden="true">&times;</span>
+    <a role="button" class="close btn btn-link btn-custom delete">
+      <span data-id={{todo.id}} aria-hidden="true">&times;</span>
     </a>
   </li>
   {{/each}}

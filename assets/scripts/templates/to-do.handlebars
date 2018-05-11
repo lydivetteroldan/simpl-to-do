@@ -1,10 +1,9 @@
 <form class="form update update-content">
   <div class="form-group">
-    <input type="hidden" name="todo[id]" class="to-do-id">
-    <input type="hidden" name="todo[done]" class="to-do-done" value={{todo.done}}>
-    <input type="text" class="form-control input-sm to-do-content" name="todo[content]" placeholder="{{todo.content}}">
+    <input type="text" class="form-control input-sm to-do-content"  name="todo[content]" placeholder="{{todo.content}}">
   </div>
   <div class="form-group text-right">
     <button class="btn btn-default btn-sm btn-custom" type="submit">Update</button>
   </div>
+  <p class="hidden message"></p>
 </form>

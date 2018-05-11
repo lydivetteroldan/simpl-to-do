@@ -12,7 +12,7 @@ const appError = () => {
 
 const clear = () => {
   $('form').trigger('reset')
-  $('.message').hide()
+  $('.message').addClass('hidden')
   $('.message').removeClass('error')
   $('.message').html(' ')
 }
@@ -32,6 +32,8 @@ const onHiddenModal = () => {
     clear()
   })
 }
+
+const onCreateSuccess = () => $('#createModal').modal('hide')
 
 const onShowAllSuccess = (data) => {
   const showTodoListHtml = todoListTemplate({ todos: data.todos })
@@ -53,23 +55,19 @@ const onShowSuccess = (data) => {
 }
 
 const onUpdateSuccess = () => {
-  console.log('onUpdateSuccess! it works')
-}
-
-const onUpdateFailure = () => {
-  console.log('onUpdateFailure! try again')
+  $('#todoModal').modal('hide')
 }
 
 const showAlert = () => {
-  $('.message').fadeIn()
+  $('.message').removeClass('hidden')
 }
 
 module.exports = {
   appError,
   onHiddenModal,
+  onCreateSuccess,
   onShowAllSuccess,
   onShowAllFailure,
   onShowSuccess,
-  onUpdateSuccess,
-  onUpdateFailure
+  onUpdateSuccess
 }
