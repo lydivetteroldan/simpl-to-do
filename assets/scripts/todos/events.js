@@ -6,10 +6,8 @@ const ui = require('./ui')
 
 const onDelete = (event) => {
   event.preventDefault()
-  console.log('onDelete event.target is', event.target)
   const id = event.target.dataset.id
   api.destroy(id)
-    .then(ui.onDeleteSuccess)
     .then(() => onShowAll())
     .catch(ui.appError)
 }
