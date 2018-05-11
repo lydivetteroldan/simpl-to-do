@@ -42,6 +42,12 @@ body {
   margin-top: 0;
 }
 
+.to-do {
+  .close {
+    line-height: inherit;
+  }
+}
+
 .text-mono {
   font-family: 'Roboto Mono', monospace;
 
