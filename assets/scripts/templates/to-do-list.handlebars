@@ -8,8 +8,8 @@
     <a role="button" name="{{todo.content}}" data-id={{todo.id}} data-toggle="modal" data-target="#todoModal" class="btn btn-link btn-custom see-more">
       {{todo.content}}
     </a>
-    <a role="button" class="close btn btn-link btn-custom">
-      <span aria-hidden="true">&times;</span>
+    <a role="button" class="close btn btn-link btn-custom delete">
+      <span data-id={{todo.id}} aria-hidden="true">&times;</span>
     </a>
   </li>
   {{/each}}

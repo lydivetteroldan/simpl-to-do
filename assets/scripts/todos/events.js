@@ -4,6 +4,16 @@ const api = require('./api')
 const getFormFields = require('../../../lib/get-form-fields')
 const ui = require('./ui')
 
+const onDelete = (event) => {
+  event.preventDefault()
+  console.log('onDelete event.target is', event.target)
+  const id = event.target.dataset.id
+  api.destroy(id)
+    .then(ui.onDeleteSuccess)
+    .then(() => onShowAll())
+    .catch(ui.appError)
+}
+
 const onShowAll = () => {
   api.index()
     .then(ui.onShowAllSuccess)
@@ -38,6 +48,7 @@ const onUpdate = (event) => {
 
 const eventHandlers = () => {
   onShownUpdate()
+  $('#list').on('click', '.delete', onDelete)
   $('#list').on('click', '.see-more', onShow)
   $('#todoTemplate').on('submit', '.update-content', onUpdate)
 }

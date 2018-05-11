@@ -27,6 +27,10 @@ const error = () => {
   $('.message.error').append(message)
 }
 
+const onDeleteSuccess = () => {
+  console.log('onDeleteSuccess! it works')
+}
+
 const onHiddenModal = () => {
   $('.modal').on('hidden.bs.modal', function (e) {
     clear()
@@ -62,6 +66,7 @@ const showAlert = () => {
 
 module.exports = {
   appError,
+  onDeleteSuccess,
   onHiddenModal,
   onShowAllSuccess,
   onShowAllFailure,
