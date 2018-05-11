@@ -65,11 +65,28 @@ const onUpdate = (event) => {
     .catch(ui.appError)
 }
 
+const onCheckboxToggle = (event) => {
+  event.target.value = event.target.checked
+  const content = $(event.target).siblings('.to-do-content').val()
+  const done = event.target.value
+  const data = {
+    todo: {
+      content,
+      done
+    }
+  }
+  id = $(event.target).attr('data-id')
+  api.update(data, id)
+    .then(() => onShowAll())
+    .catch(ui.appError)
+}
+
 const eventHandlers = () => {
   onShownCreate()
   onShownUpdate()
   $('#list').on('click', '.delete', onDelete)
   $('#list').on('click', '.see-more', onShow)
+  $('#list').on('change', '.to-do-done', onCheckboxToggle)
   $('#createTemplate').on('submit', '.create', onCreate)
   $('#todoTemplate').on('submit', '.update-content', onUpdate)
 }
