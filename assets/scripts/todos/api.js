@@ -3,6 +3,18 @@
 const config = require('../config')
 const store = require('../store')
 
+const create = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/todos',
+    method: 'POST',
+    headers: {
+      contentType: 'application/json',
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 const destroy = function (id) {
   return $.ajax({
     url: config.apiUrl + '/todos/' + id,
@@ -48,6 +60,7 @@ const update = function (data, id) {
 }
 
 module.exports = {
+  create,
   destroy,
   index,
   show,

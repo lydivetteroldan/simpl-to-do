@@ -63,6 +63,7 @@ const showAlert = () => {
 module.exports = {
   appError,
   onHiddenModal,
+  onCreateSuccess,
   onShowAllSuccess,
   onShowAllFailure,
   onShowSuccess,
