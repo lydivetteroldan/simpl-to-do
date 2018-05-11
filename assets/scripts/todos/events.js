@@ -42,6 +42,7 @@ const onShownCreate = () => {
   $('#createModal').on('shown.bs.modal', function (event) {
     event.preventDefault()
     const createHtml = createTemplate()
+    $('#createTemplate').html(' ')
     $('#createTemplate').append(createHtml)
   })
 }

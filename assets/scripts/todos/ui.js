@@ -33,6 +33,8 @@ const onHiddenModal = () => {
   })
 }
 
+const onCreateSuccess = () => $('#createModal').modal('hide')
+
 const onShowAllSuccess = (data) => {
   const showTodoListHtml = todoListTemplate({ todos: data.todos })
   store.data = data
