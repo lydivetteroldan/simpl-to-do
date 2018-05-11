@@ -25,8 +25,10 @@ You can view the wireframes for this project [here](https://imgur.com/b7TJV0F).
 - Github Pages
 
 ### Unsolved Issues for Future Iterations
-- Test with API
-- Deploy
+- ~~Test with API~~
+- ~~Deploy~~
+- Test deployed application
+- Enhance UI
 - Add extra features
   - A user will be able to create a to-do list with a maximum of three items. The idea behind this is to increase focus and productivity, based on [the rule of three](http://agilelifestyle.net/the-rule-of-3).
 
