@@ -12,28 +12,36 @@
 
   &.bbt {
     border: 0;
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid;
     padding: 0;
     padding-bottom: 1px;
 
     &:focus,
     &:hover {
-      border-bottom: 1px solid $dark-gray;
+      border-bottom: 1px solid;
     }
+  }
+
+  &.create {
+    background-color: $gold;
+  }
+
+  &.see-more {
+    color: inherit;
   }
 }
 
 .btn-default {
   @extend .flat;
 
-  border: 1px solid $black;
+  border: $border-default;
 
   &:active,
   &:focus,
   &:hover {
-    background-color: transparent;
-    border: 1px solid $dark-gray;
-    color: $dark-gray;
+    background-color: $washed-yellow;
+    border: $border-default;
+    color: $near-black;
   }
 }
 
@@ -51,6 +59,21 @@
   padding: 0;
 }
 
+.navbar-collapse {
+  .btn-custom {
+    background-color: $white;
+  }
+}
+
+.footer {
+  .btn-custom {
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: $white;
+    }
+  }
+}
 @media (max-width: $screen-sm-max) {
   .btn-main {
     margin: 12px 15px 0;

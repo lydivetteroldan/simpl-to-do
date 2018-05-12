@@ -12,6 +12,10 @@ body {
   &:not(.see-more) {
     text-transform: lowercase;
   }
+
+  &.see-more {
+    font-size: 12px;
+  }
 }
 
 .btn-main {

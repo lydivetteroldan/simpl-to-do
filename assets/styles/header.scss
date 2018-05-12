@@ -20,15 +20,9 @@
 }
 
 @media (max-width: $screen-xs-max) {
-  .list-unstyled {
-    li {
-      margin-bottom: 10px;
-    }
-  }
-
   .navbar {
     &-collapse {
-      background-color: $near-white;
+      background-color: $white;
       padding: $medium-padding;
     }
   }
