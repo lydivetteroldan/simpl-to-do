@@ -61,6 +61,7 @@
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                   <h4 class="text-sans text-strong modal-title" id="createModalLabel">Create</h4>
+                  <small>Create a to-do and add it to your list.</small>
                 </div>
                 <div class="modal-body">
                   <div id="createTemplate"></div>
@@ -70,12 +71,13 @@
             </div>
           </div>
           <!-- Modal: Update -->
-          <div class="modal fade todo" tabindex="-1" role="dialog" aria-labelledby="todoModalLabel" id="todoModal">
+          <div class="modal fade update" tabindex="-1" role="dialog" aria-labelledby="todoModalLabel" id="todoModal">
             <div class="modal-dialog modal-sm" role="document">
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                  <h4 class="text-sans text-strong modal-title" id="todoModalLabel">To-Do</h4>
+                  <h4 class="text-sans text-strong modal-title" id="todoModalLabel">Edit</h4>
+                  <small>Edit your to-do list item.</small>
                 </div>
                 <div class="modal-body">
                   <div id="todoTemplate"></div>
@@ -139,7 +141,7 @@
                       <div class="box">
                         <section id="title">
                           <h3 class="text-sans text-strong h3">
-                            To–Do
+                            To–Do List
                             <span class="pull-right">
                               <button type="button" data-toggle="modal" role="button" data-target="#createModal" class="text-mono text-strong btn btn-default btn-custom create">
                                 Create a To-Do

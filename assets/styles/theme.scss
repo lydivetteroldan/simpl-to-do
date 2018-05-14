@@ -76,6 +76,13 @@ a {
   &-header {
     border-color: $black;
   }
+
+  &.create,
+  &.update {
+    .modal-header {
+      border-color: transparent;
+    }
+  }
 }
 
 .password-notifications {
