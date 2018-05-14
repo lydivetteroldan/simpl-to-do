@@ -69,7 +69,7 @@
               </div>
             </div>
           </div>
-          <!-- Modal: To-Do -->
+          <!-- Modal: Update -->
           <div class="modal fade todo" tabindex="-1" role="dialog" aria-labelledby="todoModalLabel" id="todoModal">
             <div class="modal-dialog modal-sm" role="document">
               <div class="modal-content">
@@ -79,6 +79,20 @@
                 </div>
                 <div class="modal-body">
                   <div id="todoTemplate"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal: Learn More -->
+          <div class="modal fade learn" tabindex="-1" role="dialog" aria-labelledby="learnModalLabel" id="learnModal">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h3 class="text-sans text-strong modal-title" id="learnModalLabel">simpl to-do</h3>
+                </div>
+                <div class="modal-body">
+                  <div id="learnTemplate"></div>
                 </div>
               </div>
             </div>
@@ -94,6 +108,7 @@
                     <section class="section-padding" id="introduction">
                       <div class="box">
                         <p class="text-sans intro-text"><span class="text-lowercase text-sans text-strong">Simpl To-Do</span> is meant to be an easy way to create and update your to-do list.</p>
+                        <button type="button" data-toggle="modal" role="button" data-target="#learnModal" class="text-lowercase text-mono text-strong btn btn-default btn-custom" id="learnModalButton">Learn More</button>
                         <p class="message"></p>
                       </div>
                     </section>

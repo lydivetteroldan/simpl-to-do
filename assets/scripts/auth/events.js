@@ -47,6 +47,7 @@ const onSignOut = (event) => {
 
 const eventHandlers = () => {
   ui.onClose()
+  ui.showLearnMore()
   ui.showPasswordForm()
   $('#signUpTemplate').on('submit', '#signUp', onSignUp)
   $('#signInTemplate').on('submit', '#signIn', onSignIn)

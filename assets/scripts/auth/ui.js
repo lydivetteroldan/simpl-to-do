@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('../store')
+const learnMoreTemplate = require('../templates/learn.handlebars')
 const passwordFormTemplate = require('../templates/password.handlebars')
 const signInTemplate = require('../templates/sign-in.handlebars')
 const signUpTemplate = require('../templates/sign-up.handlebars')
@@ -42,6 +43,13 @@ const showPasswordForm = () => {
   $('#passwordModal').on('shown.bs.modal', function () {
     const passwordFormHtml = passwordFormTemplate()
     $('#passwordTemplate').append(passwordFormHtml)
+  })
+}
+
+const showLearnMore = () => {
+  $('#learnModal').on('shown.bs.modal', function () {
+    const learnMoreHtml = learnMoreTemplate()
+    $('#learnTemplate').append(learnMoreHtml)
   })
 }
 
@@ -111,6 +119,7 @@ module.exports = {
   changePasswordError,
   changePasswordSuccess,
   onClose,
+  showLearnMore,
   showPasswordForm,
   showSignUp,
   showSignIn,

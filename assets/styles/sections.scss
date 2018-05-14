@@ -1,3 +1,16 @@
+.learn {
+  &-article {
+    background-color: $washed-yellow;
+    border: $border-default;
+    margin: 20px 0;
+    padding: 15px;
+  }
+
+  .modal-body {
+    padding: 2em 3em;
+  }
+}
+
 .section-padding {
   padding: 0 2em;
 }
