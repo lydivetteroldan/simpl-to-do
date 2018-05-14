@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>simpl to-do – manage your to-do list</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,900" rel="stylesheet">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <div id="page">
+        <header id="header">
+          <nav class="navbar navbar-static-top page-navbar">
+            <div class="container-fluid navbar-container">
+              <div class="navbar-header">
+                <button type="button" class="hidden navbar-toggle collapsed" data-toggle="collapse" data-target="#pageNavbarCollapse" aria-expanded="false">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+                <a class="btn btn-custom btn-main" href="#">Simpl To-Do</a>
+              </div>
+              <div class="collapse navbar-collapse" id="pageNavbarCollapse">
+                <ul class="hidden navbar-right list-inline" id="authenticated">
+                  <li>
+                    <button type="button" data-toggle="modal" role="button" data-target="#passwordModal" class="text-strong btn btn-default btn-custom" id="passwordModalButton">Password</button>
+                  </li>
+                  <li>
+                    <button type="submit" role="button" class="text-strong btn btn-default btn-custom" id="signOut">Sign Out</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </header>
+        <section id="modals">
+          <!-- Modal: Change Password -->
+          <div class="modal fade password" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" id="passwordModal">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="text-sans text-strong modal-title" id="passwordModalLabel">Change Password</h4>
+                </div>
+                <div class="modal-body">
+                  <div id="passwordTemplate"></div>
+                  <p class="message password-message"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal: Create -->
+          <div class="modal fade create" tabindex="-1" role="dialog" aria-labelledby="createModalLabel" id="createModal">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="text-sans text-strong modal-title" id="createModalLabel">Create</h4>
+                  <small>Create a to-do and add it to your list.</small>
+                </div>
+                <div class="modal-body">
+                  <div id="createTemplate"></div>
+                  <p class="message"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal: Update -->
+          <div class="modal fade update" tabindex="-1" role="dialog" aria-labelledby="todoModalLabel" id="todoModal">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="text-sans text-strong modal-title" id="todoModalLabel">Edit</h4>
+                  <small>Edit your to-do list item.</small>
+                </div>
+                <div class="modal-body">
+                  <div id="todoTemplate"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Modal: Learn More -->
+          <div class="modal fade learn" tabindex="-1" role="dialog" aria-labelledby="learnModalLabel" id="learnModal">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h3 class="text-sans text-strong modal-title" id="learnModalLabel">simpl to-do</h3>
+                </div>
+                <div class="modal-body">
+                  <div id="learnTemplate"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="content">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-6 col-md-offset-3">
+                <div class="row">
+                  <div class="col-md-12">
+                    <!-- Introduction -->
+                    <section class="section-padding" id="introduction">
+                      <div class="box">
+                        <p class="text-sans intro-text"><span class="text-lowercase text-sans text-strong">Simpl To-Do</span> is meant to be an easy way to create and update your to-do list.</p>
+                        <button type="button" data-toggle="modal" role="button" data-target="#learnModal" class="text-lowercase text-mono text-strong btn btn-default btn-custom" id="learnModalButton">Learn More</button>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <!-- Authentication -->
+                    <section class="section-padding" id="authentication">
+                      <div class="box">
+                        <section class="sign-up" id="signUpSection">
+                          <h3 class="text-sans text-strong h3">Sign Up <br><small>Please sign up to create a free account.</small></h3>
+                          <div id="signUpTemplate"></div>
+                          <small class="not-signed-up-cta">If you already have an account, <br class="visible-xs-block"> sign in <button type="submit" class="btn btn-custom bbt sign-in-btn">here</button>.</small>
+                          <small class="signed-up-cta">You can sign in <button type="submit" class="btn btn-custom bbt sign-in-btn">here</button>.</small>
+                        </section>
+                        <section class="sign-in" id="signInSection">
+                          <h3 class="text-sans text-strong h3">Sign In<br> <small>Please sign in to continue.</small></h3>
+                          <div id="signInTemplate"></div>
+                          <small>If you do not have an account, <br class="visible-xs-block"> sign up <button type="submit" class="btn btn-custom bbt sign-up-btn">here</button>.</small>
+                        </section>
+                        <section>
+                          <p class="message"></p>
+                        </section>
+                      </div>
+                    </section>
+                    <!-- Home -->
+                    <section id="home">
+                      <div class="box">
+                        <section id="title">
+                          <h3 class="text-sans text-strong h3">
+                            To–Do List
+                            <span class="pull-right">
+                              <button type="button" data-toggle="modal" role="button" data-target="#createModal" class="text-mono text-strong btn btn-default btn-custom create">
+                                Create a To-Do
+                              </button>
+                            </span>
+                          </h3>
+                        </section>
+                        <section id="list"></section>
+                      </div>
+                    </section>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <footer class="footer" id="footer">
+          <div class="container-fluid footer-container text-right">
+            <div class="row">
+              <div class="col-md-12">
+                <small class="footer-text">made by <a class="btn btn-custom bbt" href="https://github.com/lydivetteroldan" target="_blank">Lydivette Roldán</a></small>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+    </body>
+</html>
