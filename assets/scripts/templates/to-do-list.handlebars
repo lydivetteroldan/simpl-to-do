@@ -1,3 +1,7 @@
+{{#unless todos}}
+<p>Your list is empty. Create a to-do.</p>
+{{/unless}}
+
 <ul class="list-unstyled to-do-list" id="todoList">
   {{#each todos as |todo|}}
   <li class="to-do">
