@@ -33,6 +33,10 @@ const onClose = () => {
   $('#passwordModal').on('hidden.bs.modal', function () {
     $('#passwordTemplate').html(' ')
   })
+
+  $('#learnModal').on('hidden.bs.modal', function () {
+    $('#learnTemplate').html(' ')
+  })
 }
 
 const showAlert = () => {
