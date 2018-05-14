@@ -63,6 +63,15 @@
   .btn,
   input[type='checkbox'] {
     margin-bottom: 15px;
+
+    &,
+    &:active,
+    &:focus,
+    &:hover {
+      cursor: default;
+      -ms-touch-action: none;
+      touch-action: none;
+    }
   }
 
   .btn {
