@@ -70,6 +70,8 @@ const showSignUp = () => {
   const signUpHtml = signUpTemplate()
   clear()
   $('#signInSection').hide()
+  $('.signed-up-cta').hide()
+  $('.not-signed-up-cta').show()
   $('#signUpTemplate').html(' ')
   $('#signUpTemplate').append(signUpHtml)
   $('#signUpSection').fadeIn()
@@ -77,8 +79,12 @@ const showSignUp = () => {
 
 const signUpSuccess = (data) => {
   store.user = data.user
+  const message = 'Your account has been created.'
   clear()
-  showSignIn()
+  $('.not-signed-up-cta').hide()
+  $('.signed-up-cta').show()
+  $('.message').append(message)
+  showAlert()
 }
 
 const signInSuccess = (data) => {

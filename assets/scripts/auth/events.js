@@ -52,8 +52,8 @@ const eventHandlers = () => {
   $('#signUpTemplate').on('submit', '#signUp', onSignUp)
   $('#signInTemplate').on('submit', '#signIn', onSignIn)
   $('#passwordTemplate').on('submit', '#password', onChangePassword)
-  $('#signInButton').on('click', ui.showSignIn)
-  $('#signUpButton').on('click', ui.showSignUp)
+  $('.sign-in-btn').on('click', ui.showSignIn)
+  $('.sign-up-btn').on('click', ui.showSignUp)
   $('#signOut').on('click', onSignOut)
 }
 
